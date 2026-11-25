@@ -28,6 +28,15 @@ To test without ChatGPT: `bunx @modelcontextprotocol/inspector`, then connect to
 
 `bun test` runs the tests for the dry-window search. `bun run typecheck` checks the types.
 
+### Docker
+
+```sh
+docker build -t weather-mcp .
+docker run -p 5230:5230 weather-mcp   # http://localhost:5230/mcp
+```
+
+The server needs no credentials or environment variables.
+
 ## Layout
 
 | File | Role |
