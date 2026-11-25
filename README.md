@@ -1,8 +1,39 @@
 # Group 9 · Weather MCP
 
+![Animated skies for sun, rain, thunder and snow](docs/skies.gif)
+
 An MCP server that gives ChatGPT five weather tools. Every tool answers with an interactive card (an MCP App) in the same hand-drawn cartoon style: weather characters, an animated sky per weather type, and a buddy that reacts to how it feels outside.
 
 All data comes from [Open-Meteo](https://open-meteo.com). It is free and needs no API key.
+
+<table>
+  <tr>
+    <td width="50%"><img src="docs/show-weather.webp" alt="show_weather: current weather, the next 24 hours and 7 days"></td>
+    <td width="50%"><img src="docs/find-dry-window.webp" alt="find_dry_window: the best dry 2-hour slots on an hour-by-hour rain chart"></td>
+  </tr>
+  <tr>
+    <td align="center"><code>show_weather</code></td>
+    <td align="center"><code>find_dry_window</code></td>
+  </tr>
+  <tr>
+    <td><img src="docs/air-quality.webp" alt="air_quality: European AQI, pollutants and the next 24 hours"></td>
+    <td><img src="docs/sun-times.webp" alt="sun_times in dark mode: daylight, golden hour and the week ahead"></td>
+  </tr>
+  <tr>
+    <td align="center"><code>air_quality</code></td>
+    <td align="center"><code>sun_times</code> (dark mode)</td>
+  </tr>
+  <tr>
+    <td colspan="2"><img src="docs/compare-weather.webp" alt="compare_weather: four cities side by side with Warmest and Calmest badges"></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center"><code>compare_weather</code></td>
+  </tr>
+</table>
+
+Each weather type gets its own sky, and the buddy dresses for it:
+
+![Eight skies: scorching, partly cloudy, heavy rain, thunderstorm, snow, fog, clear night and stormy winds](docs/skies.webp)
 
 ## Tools
 
@@ -52,5 +83,6 @@ The server needs no credentials or environment variables.
 | `src/view/icons.ts` | The hand-drawn art: the weather characters and the buddy |
 | `src/view/backdrop.ts` | The animated sky behind the top section, one composition per weather condition |
 | `src/view/format.ts` | Small helpers the cards share (times, degrees, escaping) |
+| `docs/` | The images in this README. The cards show real tool results; the sky images use made-up weather to show every type. |
 
 The widget is bundled when the server starts, so restart the server (or use `bun run dev`) after you edit it.
